@@ -7,6 +7,5 @@ install:
 # use pyaml for tests above py26
 # - pip install -r requirements.txt
   - ls -la
-  - find -name '*.md' -print0 | xargs -0 git diff --
 # command to run tests
-script: ls -la
+script: git diff --name-only 
