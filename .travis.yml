@@ -7,6 +7,10 @@ install:
 # use pyaml for tests above py26
 # - pip install -r requirements.txt
   - ls -la
-  - CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE)) && echo CHANGED_FILES
 # command to run tests
-script: git diff --name-only 
+script: python scripts/test.py
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
