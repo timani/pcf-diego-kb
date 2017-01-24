@@ -1,0 +1,12 @@
+# see http://about.travis-ci.org/docs/user/languages/python/ for more hints
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install: 
+# use pyaml for tests above py26
+# - pip install -r requirements.txt
+  - ls -la
+  - CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE)) && echo CHANGED_FILES
+# command to run tests
+script: git diff --name-only 
